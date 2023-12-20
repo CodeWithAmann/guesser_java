@@ -1,0 +1,77 @@
+# guesser_java
+import java.util.Scanner;
+
+class Guesser_class
+{
+    int guess;
+
+    int guesser_input()
+    {
+        System.out.println("Just THINK (Guess) The Number :- ");
+        Scanner sc = new Scanner(System.in);
+        guess = sc.nextInt();
+        return guess;
+    }
+}
+class Player_class
+{
+    int GuessPlayer;
+
+    int Guess_by_player()
+    {
+        System.out.println("Player can Guess The Number One by ONe ");
+        Scanner sc = new Scanner(System.in);
+        GuessPlayer = sc.nextInt();
+        return GuessPlayer;
+    }
+}
+class Umpire_class
+{
+    int GusserInput;
+    int Player1;
+    int Player2;
+    int Player3;
+    void Guess_method()
+    {
+        Guesser_class obj1 = new Guesser_class();
+       GusserInput =obj1.guesser_input();
+    }
+    void Player_method()
+    {
+        Player_class p1 = new Player_class();
+        Player_class p2 = new Player_class();
+        Player_class p3 = new Player_class();
+
+       Player1 = p1.Guess_by_player();
+      Player2 = p2.Guess_by_player();
+      Player3 = p3.Guess_by_player();
+
+    }
+    void Check_wining_condition()
+    {
+        if (GusserInput == Player1) {
+            System.out.println("Player1 Has WIN");
+        }
+        else if (GusserInput == Player2)
+        {
+            System.out.println("Player2 Has WIn");
+        }
+        else if (GusserInput == Player3 )
+        {
+            System.out.println("Player3 Has WIn");
+        }
+        else
+        {
+            System.out.println("OPPs NO ONe Can WIn Please try Again");
+        }
+    }
+}
+public class game {
+    public static void main(String[] args) {
+        System.out.println("\t--->>Welcome To The Guesser Game In Java<<----");
+        Umpire_class obj1 = new Umpire_class();
+        obj1.Guess_method();
+        obj1.Player_method();
+        obj1.Check_wining_condition();
+    }
+}
